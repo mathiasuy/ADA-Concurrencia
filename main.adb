@@ -3,44 +3,50 @@ use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 
 procedure main is
 
-   task type Neruda(p : natural);
-   task body Neruda is
+   task type Tarea1(p : natural);
+   task body Tarea1 is
     begin
         loop
-            put_line("Neruda: me gustas cuando callas porque estás como ausente.");
+            put_line("Tarea 1 Línea 1");
             put(p);
-            put_line("y me oyes desde lejos, y mi voz te toca.");
+            put_line("Tarea 1 Línea 2");
+            put(p);
+            put_line("Tarea 1 Línea 3");
+            put(p);
+            put_line("Tarea 1 Línea 4");
+            put(p);
+            put_line("Tarea 1 Línea 5");
             put(p);
             new_line;
         end loop;
-    end Neruda;
+    end Tarea1;
 
-    type poemas1 is access Neruda;
+    type t_tarea1 is access Tarea1;
 
-    task type Tahirih(p: natural);
-    task body Tahirih is
+    task type Tarea2(p: natural);
+    task body Tarea2 is
     begin
         loop
-            put_line("Tahirih: poema 21 bla bla");
+            put_line("Tarea 2 Línea 1");
             put(p);
-            put_line("Tahirih: poema 22 bla bla");
+            put_line("Tarea 2 Línea 2");
             put(p);
-            put_line("Tahirih: poema 23 bla bla");
+            put_line("Tarea 2 Línea 3");
             put(p);
-            put_line("Tahirih: poema 24 bla bla");
+            put_line("Tarea 2 Línea 4");
             put(p);
-            put_line("Tahirih: poema 25 bla bla");
+            put_line("Tarea 2 Línea 5");
             put(p);
             new_line;
         end loop;
-    end Tahirih;
+    end Tarea2;
 
-    type poemas2 is access Tahirih;
+    type t_tarea2 is access Tarea2;
 
-    N : poemas1;
-    T : poemas2;
+    N : t_tarea1;
+    T : t_tarea2;
 
 begin
-  N := new Neruda(1);
-  T := new Tahirih(2);
+  N := new Tarea1(1);
+  T := new Tarea2(2);
 end main;
